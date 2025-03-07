@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe App</title>
+  <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div>9:41</div>
+      <div class="status-icons">
+        <div class="signal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 15H4V20H6V15Z" fill="currentColor" />
+            <path d="M11 10H9V20H11V10Z" fill="currentColor" />
+            <path d="M16 5H14V20H16V5Z" fill="currentColor" />
+            <path d="M21 1H19V20H21V1Z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="wifi">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 6C8.62 6 5.5 7.12 3 9L12 22L21 9C18.5 7.12 15.38 6 12 6Z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="battery">
+          <svg width="24" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 6H3C1.9 6 1 6.9 1 8V16C1 17.1 1.9 18 3 18H17C18.1 18 19 17.1 19 16V8C19 6.9 18.1 6 17 6Z" stroke="currentColor" strokeWidth="2" />
+            <path d="M20.4 9H23V15H20.4" stroke="currentColor" strokeWidth="2" />
+            <rect x="2" y="7" width="15" height="10" fill="currentColor" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav Bar -->
+    <div class="nav-bar">
+      <button id="back-button" class="back-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+      <h1 class="nav-title">Recipes</h1>
+      <div class="spacer"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Home Page Content - Shown by default -->
+      <div id="home-page" class="page active">
+        <div class="content-container">
+          <!-- Featured Banner -->
+          <div class="featured-banner animate-zoom-in">
+            <p class="banner-subtitle">You can make</p>
+            <h1 class="banner-title">100 Recipes</h1>
+            <p class="banner-subtitle">with your 10 ingredients</p>
+          </div>
+          <!-- AI Recipe Generator Link/Button -->
+<div class="ai-generator-link animate-fade-in">
+  <a href="#" class="nav-item" data-page="generator">
+    <button id="go-to-generator" class="w-full bg-recipe-olive text-white py-3 rounded-lg font-medium">
+      AI Recipe Generator
+    </button>
+  </a>
+</div>
+
+
+          <!-- Vegetarian Category -->
+          <div class="recipe-category animate-slide-up">
+            <div class="category-header" data-category="vegetarian">
+              <h2 class="category-title">Vegetarian</h2>
+              <svg class="chevron-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            
+            <div class="recipe-grid">
+              <a href="#" class="recipe-card" data-id="v1" data-category="vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/pulov.png" alt="Vegetable Biryani" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="v2" data-category="vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/vada.png" alt="Vada" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="v3" data-category="vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/poori.png" alt="Puri" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="v4" data-category="vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/paneer.png" alt="Paneer Butter Masala" class="recipe-image">
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Non Vegetarian Category -->
+          <div class="recipe-category animate-slide-up" style="animation-delay: 0.1s;">
+            <div class="category-header" data-category="non-vegetarian">
+              <h2 class="category-title">Non Vegetarian</h2>
+              <svg class="chevron-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            
+            <div class="recipe-grid">
+              <a href="#" class="recipe-card" data-id="nv1" data-category="non-vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/chickengravy.png" alt="Chicken Curry" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="nv2" data-category="non-vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/biriyani.png" alt="Chicken Biryani" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="nv3" data-category="non-vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/butterchick.png" alt="Butter Chicken" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="nv4" data-category="non-vegetarian">
+                <div class="recipe-image-container">
+                  <img src="./images/chicken.png" alt="Chicken Karahi" class="recipe-image">
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Quick Recipes Category -->
+          <div class="recipe-category animate-slide-up" style="animation-delay: 0.2s;">
+            <div class="category-header" data-category="quick">
+              <h2 class="category-title">Ready in less than 15 minutes</h2>
+              <svg class="chevron-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            
+            <div class="recipe-grid">
+              <a href="#" class="recipe-card" data-id="q1" data-category="quick">
+                <div class="recipe-image-container">
+                  <img src="./images/jeera.png" alt="Jeera Rice" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="q2" data-category="quick">
+                <div class="recipe-image-container">
+                  <img src="./images/pulov.png" alt="Veg Pulao" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="q3" data-category="quick">
+                <div class="recipe-image-container">
+                  <img src="./images/channa.png" alt="Chana Masala" class="recipe-image">
+                </div>
+              </a>
+              <a href="#" class="recipe-card" data-id="q4" data-category="quick">
+                <div class="recipe-image-container">
+                  <img src="./images/kebab.png" alt="Seekh Kabab" class="recipe-image">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Page - Initially hidden -->
+      <div id="category-page" class="page">
+        <div class="content-container">
+          <!-- Featured Banner - Will be populated dynamically -->
+          <div class="featured-banner animate-zoom-in">
+            <p class="banner-subtitle">You can make</p>
+            <h1 class="banner-title">50 Vegetarian recipes</h1>
+            <p class="banner-subtitle">with your 10 ingredients</p>
+          </div>
+          
+          <div class="category-detail animate-fade-in">
+            <h2 class="category-title">Vegetarian</h2>
+            
+            <div class="recipe-grid-category">
+              <!-- Will be populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe Detail Page - Initially hidden -->
+      <div id="recipe-detail-page" class="page">
+        <div class="recipe-detail-container animate-fade-in">
+          <div class="recipe-image-full">
+            <!-- Will be populated dynamically -->
+          </div>
+          
+          <div class="recipe-info">
+            <!-- Will be populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe Generator Page - Initially hidden -->
+      <div id="recipe-generator-page" class="page">
+        <div class="content-container">
+          <div class="bg-white rounded-xl shadow-sm p-4 mb-6 animate-fade-in">
+            <h2 class="text-lg font-medium mb-4">Generate a Recipe from Ingredients</h2>
+            <div class="ai-input-container">
+              <label for="expiryDropdown">Select an Expiring Item:</label>
+              <select id="expiryDropdown">
+                <option value="">Select an item</option>
+              </select>
+            
+             
+            </div>
+            
+            <textarea 
+              id="ingredients-input"
+              class="w-full border border-gray-300 rounded-lg p-3 min-h-100 mb-4"
+              placeholder="Enter ingredients (comma separated)..."
+            ></textarea>
+            <button
+              id="generate-recipe-button"
+              class="w-full bg-recipe-olive text-white py-3 rounded-lg font-medium"
+            >
+              Generate Recipe
+            </button>
+          </div>
+          
+          <div id="generated-recipe-container" class="bg-white rounded-xl shadow-sm p-4 mb-4 animate-fade-in" style="display: none;">
+            <h2 class="text-lg font-medium mb-2">Generated Recipe</h2>
+            <div id="generated-recipe-text" class="text-left whitespace-pre-line">
+              <!-- Will be populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom Navigation -->
+     <!--
+    <div class="bottom-nav">
+      <a href="#" class="nav-item" data-page="calendar">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      </a>
+      
+      <a href="#" class="nav-item home-button" data-page="home">
+        <div class="home-button-inner">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2c1.103 0 2 .897 2 2v2c0 1.103-.897 2-2 2s-2-.897-2-2V4c0-1.103.897-2 2-2z" />
+            <path d="M12 9c-2.214 0-4 1.786-4 4s1.786 4 4 4 4-1.786 4-4-1.786-4-4-4z" />
+            <path d="M18 17.5c0 1.933-2.686 3.5-6 3.5s-6-1.567-6-3.5" />
+            <path d="M17.5 6.5c1.379.879 2.5 2.159 2.5 3.5 0 1.294-.969 2.445-2.5 3.5" />
+            <path d="M6.5 6.5c-1.379.879-2.5 2.159-2.5 3.5 0 1.294.969 2.445 2.5 3.5" />
+          </svg>
+        </div>
+      </a>
+      
+      <a href="#" class="nav-item" data-page="generator">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+      </a>
+    </div>
+  -->     
+    <!-- Bottom Navigation -->
+ <!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="expiry.html" class="nav-item" data-page="calendar">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  </a>
+
+  <a href="#" class="nav-item home-button" data-page="home">
+    <div class="home-button-inner">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2c1.103 0 2 .897 2 2v2c0 1.103-.897 2-2 2s-2-.897-2-2V4c0-1.103.897-2 2-2z" />
+        <path d="M12 9c-2.214 0-4 1.786-4 4s1.786 4 4 4 4-1.786 4-4-1.786-4-4-4z" />
+        <path d="M18 17.5c0 1.933-2.686 3.5-6 3.5s-6-1.567-6-3.5" />
+        <path d="M17.5 6.5c1.379.879 2.5 2.159 2.5 3.5 0 1.294-.969 2.445-2.5 3.5" />
+        <path d="M6.5 6.5c-1.379.879-2.5 2.159-2.5 3.5 0 1.294.969 2.445 2.5 3.5" />
+      </svg>
+    </div>
+  </a>
+
+  <a href="charity-details.html" class="nav-item" data-page="donate">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+  </a>
+</div>
+
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+      <svg class="spinner" viewBox="0 0 24 24">
+        <circle class="spinner-track" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+        <path class="spinner-path" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <script src="homedata.js"></script>
+  <script src="homeapp.js"></script>
+</body>
+</html>

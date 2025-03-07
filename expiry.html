@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expiry Date Tracker</title>
+    <meta name="description" content="Track expiry dates of your items" />
+    <link rel="stylesheet" href="expirystyle.css" />
+  </head>
+
+  <body>
+    <div id="app" class="app-container">
+      <!-- Main page content will be loaded here -->
+    </div>
+
+    <!-- Dialog for selecting entry type -->
+    <div id="entrySelectorDialog" class="dialog-container hidden">
+      <div class="dialog-overlay"></div>
+      <div class="dialog-content">
+        <div class="dialog-inner">
+          <h2 class="dialog-title">How would you like to add an item?</h2>
+          
+          <div class="entry-options">
+            <button id="manualEntryBtn" class="entry-option">
+              <div class="option-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-pen-line"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+              </div>
+              <span>Enter manually</span>
+            </button>
+            
+            <div class="option-divider">or</div>
+            
+            <button id="barcodeEntryBtn" class="entry-option">
+              <div class="option-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-scan-barcode"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
+              </div>
+              <span>Scan Barcode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <div class="bottom-nav">
+      <a href="expiry.html" class="nav-item " data-page="calendar">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      </a>
+    
+      <a href="home.html" class="nav-item home-button" data-page="home">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2c1.103 0 2 .897 2 2v2c0 1.103-.897 2-2 2s-2-.897-2-2V4c0-1.103.897-2 2-2z" />
+            <path d="M12 9c-2.214 0-4 1.786-4 4s1.786 4 4 4 4-1.786 4-4-1.786-4-4-4z" />
+            <path d="M18 17.5c0 1.933-2.686 3.5-6 3.5s-6-1.567-6-3.5" />
+            <path d="M17.5 6.5c1.379.879 2.5 2.159 2.5 3.5 0 1.294-.969 2.445-2.5 3.5" />
+            <path d="M6.5 6.5c-1.379.879-2.5 2.159-2.5 3.5 0 1.294.969 2.445 2.5 3.5" />
+          </svg>
+      </a>
+    
+      <a href="charity-details.html" class="nav-item" data-page="donate">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </a>
+    </div>
+    
+    <script src="expiry.js"></script>
+  </body>
+</html>

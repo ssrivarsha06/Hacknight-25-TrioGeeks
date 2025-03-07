@@ -1,0 +1,519 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --charity-color: #6b7654;
+    --charity-light: #F0F4EB;
+    --charity-dark: #6b7654;
+    --charity-foreground: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-500: #6B7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --green-100: #DCFCE7;
+    --green-600: #16A34A;
+    --blue-100: #DBEAFE;
+    --blue-600: #2563EB;
+}
+
+body {
+    background-color: var(--gray-50);
+    color: var(--gray-900);
+}
+
+#app {
+    max-width: 5000px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+  
+  .donate-button-inner {
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .donate-button-inner svg {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--recipe-olive);
+    border-radius: 50%;
+    padding: 0.75rem;
+  }
+  
+/* Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--gray-50);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.status-icons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.status-bar svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    width: 100%;
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.back-button, .filter-button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.back-button:hover, .filter-button:hover {
+    background-color: var(--gray-100);
+}
+
+.spacer {
+    width: 32px;
+}
+
+/* Search Bar */
+.search-container {
+    padding: 0 16px 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 48px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar svg {
+    color: var(--gray-500);
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    height: 100%;
+}
+
+.filter-icon-button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    overflow-y: auto;
+}
+
+/* Charity Card */
+.charity-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    animation: slideUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.charity-card .flex {
+    display: flex;
+    padding: 12px;
+}
+
+.charity-image-container {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.charity-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.charity-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 16px;
+}
+
+.charity-card-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gray-900);
+}
+
+.charity-card-distance {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--charity-color);
+}
+
+.charity-card-location {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 4px;
+}
+
+.charity-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.donate-button-card {
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: white;
+    color: var(--charity-color);
+    border: 1px solid var(--charity-color);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.donate-button-card:hover {
+    background-color: var(--charity-light);
+}
+
+.call-button-card {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.call-button-card svg {
+    color: var(--charity-color);
+    width: 18px;
+    height: 18px;
+}
+
+/* Charity Detail Page */
+.charity-image {
+    width: 100%;
+    height: 275px;
+    background-color: var(--gray-200);
+}
+
+.charity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Charity Details */
+.charity-details {
+    padding: 20px;
+}
+
+.charity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.charity-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.call-button {
+    background-color: var(--green-100);
+}
+
+.call-button svg {
+    color: var(--green-600);
+}
+
+.schedule-button {
+    background-color: var(--blue-100);
+}
+
+.schedule-button svg {
+    color: var(--blue-600);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rating-number {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.stars {
+    display: flex;
+    margin-left: 4px;
+}
+
+.star {
+    width: 16px;
+    height: 16px;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+.location {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.distance {
+    margin-bottom: 16px;
+}
+
+.distance-text {
+    color: var(--charity-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.description {
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+/* Action Bar */
+.action-bar {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.cancel-button, .donate-button {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.cancel-button {
+    background-color: white;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-300);
+}
+
+.donate-button {
+    background-color: var(--charity-color);
+    color: white;
+}
+
+.donate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    height: 64px;
+    width: 100%;
+    background-color: var(--charity-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.home-button-inner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--charity-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.toast.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.toast-description {
+    font-size: 14px;
+    color: var(--gray-500);
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+/* Animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+}
